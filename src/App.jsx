@@ -1,88 +1,45 @@
-import React, { useState } from 'react';
-import DonatorRegistration from './pages/DonatorRegistration';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { PortalProvider } from './context/PortalProvider';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import EmergencyTicker from './components/EmergencyTicker';
+import Home from './pages/Home';
 import AvailableBlood from './pages/AvailableBlood';
-import './index.css';
+import DonatorRegistration from './pages/DonatorRegistration';
+import RequestBlood from './pages/RequestBlood';
+import RequestsFeed from './pages/RequestsFeed';
+import DonationCamps from './pages/DonationCamps';
+import EligibilityChecker from './pages/EligibilityChecker';
+import DonorCardLookup from './pages/DonorCardLookup';
+import AdminDashboard from './pages/AdminDashboard';
+import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('available-blood');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'donator-registration':
-        return <DonatorRegistration />;
-      case 'available-blood':
-        return <AvailableBlood />;
-      default:
-        return <AvailableBlood />;
-    }
-  };
-
   return (
-    <div className="App">
-      <header className="app-header">
-        <div className="header-content">
-          <div className="logo">
-            <h1>🩸 Blood Donation Portal</h1>
-            <p>Saving Lives, One Donation at a Time</p>
-          </div>
-          
-          <nav className="navigation">
-            <button
-              className={`nav-btn ${currentPage === 'available-blood' ? 'active' : ''}`}
-              onClick={() => setCurrentPage('available-blood')}
-            >
-              Available Blood
-            </button>
-            <button
-              className={`nav-btn ${currentPage === 'donator-registration' ? 'active' : ''}`}
-              onClick={() => setCurrentPage('donator-registration')}
-            >
-              Register as Donor
-            </button>
-          </nav>
+    <PortalProvider>
+      <Router>
+        <div className="app-shell">
+          <EmergencyTicker />
+          <Navbar />
+          <main className="app-main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/inventory" element={<AvailableBlood />} />
+              <Route path="/donate" element={<DonatorRegistration />} />
+              <Route path="/request" element={<RequestBlood />} />
+              <Route path="/requests-feed" element={<RequestsFeed />} />
+              <Route path="/camps" element={<DonationCamps />} />
+              <Route path="/eligibility" element={<EligibilityChecker />} />
+              <Route path="/donor-card" element={<DonorCardLookup />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-      </header>
-
-      <main className="main-content">
-        {renderPage()}
-      </main>
-
-      <footer className="app-footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Emergency Contact</h3>
-            <p>📞 Emergency Blood Request: 1800-123-4567</p>
-            <p>🏥 Hospital Blood Bank: 1800-987-6543</p>
-          </div>
-          
-          <div className="footer-section">
-            <h3>Important Information</h3>
-            <ul>
-              <li>Donor must be 18-65 years old</li>
-              <li>Minimum weight: 50 kg</li>
-              <li>Gap between donations: 3 months</li>
-              <li>Health screening required</li>
-            </ul>
-          </div>
-          
-          <div className="footer-section">
-            <h3>About Blood Donation</h3>
-            <p>Every donation can save up to 3 lives. Be a hero today!</p>
-            <div className="social-links">
-              <span>Follow us: </span>
-              <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">Twitter</a>
-              <a href="#" className="social-link">Instagram</a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="footer-bottom">
-          <p>&copy; 2024 Blood Donation Portal. All rights reserved.</p>
-          <p>Developed with ❤️ for humanity</p>
-        </div>
-      </footer>
-    </div>
+      </Router>
+    </PortalProvider>
   );
 }
 
