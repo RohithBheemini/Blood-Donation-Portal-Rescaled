@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Activity,
-  Droplet,
   MapPin,
   Clock,
   Phone,
   Heart,
-  Filter,
   Search,
   CheckCircle,
-  Share2,
-  AlertTriangle
+  Share2
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';
 

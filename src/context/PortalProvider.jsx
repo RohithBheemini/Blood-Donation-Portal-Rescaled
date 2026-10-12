@@ -10,7 +10,6 @@ export const PortalProvider = ({ children }) => {
   const [requests, setRequests] = useState([]);
   const [camps, setCamps] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeDonorCard, setActiveDonorCard] = useState(null);
 
   const loadAllData = async () => {
     try {
@@ -69,7 +68,6 @@ export const PortalProvider = ({ children }) => {
         ...prev,
         [formData.bloodGroup]: (prev[formData.bloodGroup] || 0) + 1
       }));
-      setActiveDonorCard(createdDonor);
       return createdDonor;
     } catch (err) {
       console.error('Registration failed:', err);
@@ -142,8 +140,6 @@ export const PortalProvider = ({ children }) => {
         totalUnits,
         criticalShortageGroups,
         urgentRequestsCount,
-        activeDonorCard,
-        setActiveDonorCard,
         refreshData: loadAllData,
         registerNewDonor,
         createBloodRequest,

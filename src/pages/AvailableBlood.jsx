@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Droplet,
   RefreshCw,
   Search,
   Filter,
   AlertTriangle,
-  CheckCircle2,
   HelpCircle,
-  ArrowRight,
-  TrendingUp,
-  ShieldAlert,
   Heart
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';

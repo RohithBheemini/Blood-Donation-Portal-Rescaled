@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Info, HeartPulse } from 'lucide-react';
+import { X, CheckCircle, HeartPulse } from 'lucide-react';
 import { usePortal } from '../context/usePortal';
 
 const BloodCompatibilityModal = ({ isOpen, onClose }) => {

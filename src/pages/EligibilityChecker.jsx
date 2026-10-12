@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  CheckCircle2,
   XCircle,
-  HelpCircle,
   ArrowRight,
   ShieldCheck,
   AlertTriangle,

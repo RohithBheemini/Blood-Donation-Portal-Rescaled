@@ -3,12 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {
   AlertCircle,
   Hospital,
-  MapPin,
   Phone,
-  Droplet,
-  User,
-  Clock,
-  ShieldCheck,
   Send
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';

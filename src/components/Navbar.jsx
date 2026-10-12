@@ -2,16 +2,10 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
   Droplet,
-  Heart,
-  Activity,
-  Calendar,
-  ShieldCheck,
-  UserCheck,
   LayoutDashboard,
   Menu,
   X,
-  HelpCircle,
-  AlertCircle
+  HelpCircle
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';
 import BloodCompatibilityModal from './BloodCompatibilityModal';

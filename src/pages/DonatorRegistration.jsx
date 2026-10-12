@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   User,
-  Mail,
-  Phone,
-  MapPin,
   Heart,
-  Droplet,
   ShieldCheck,
   AlertCircle,
   CheckCircle2,
-  Calendar,
   Award
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';

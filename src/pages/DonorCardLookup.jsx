@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import {
   Search,
-  Award,
   ShieldCheck,
   Printer,
   Heart,
   Droplets,
-  UserCheck,
   AlertCircle
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';

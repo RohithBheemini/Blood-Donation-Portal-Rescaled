@@ -3,12 +3,9 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Users,
   Building,
-  CheckCircle,
   Phone,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from 'lucide-react';
 import { usePortal } from '../context/usePortal';
 

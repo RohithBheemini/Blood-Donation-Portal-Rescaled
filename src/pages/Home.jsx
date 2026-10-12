@@ -6,13 +6,11 @@ import {
   Users,
   AlertCircle,
   Calendar,
-  CheckCircle,
   ArrowRight,
   ShieldAlert,
   Clock,
   MapPin,
   Sparkles,
-  HelpCircle,
   ChevronDown,
   ChevronUp
 } from 'lucide-react';

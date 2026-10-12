@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, ChevronRight, Activity } from 'lucide-react';
+import { ChevronRight, Activity } from 'lucide-react';
 import { usePortal } from '../context/usePortal';
 
 const EmergencyTicker = () => {
